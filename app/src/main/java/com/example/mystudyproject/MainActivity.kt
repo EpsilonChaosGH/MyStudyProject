@@ -17,17 +17,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (savedInstanceState == null){
+        if (savedInstanceState == null) {
             val fragment = Fragment()
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.fragmentContainerView, fragment)
                 .commit()
-
-
         }
-
-
     }
-
 }

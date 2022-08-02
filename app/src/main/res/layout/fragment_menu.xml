@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btShowDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="open dialog"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btShowViewModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show ViewModel"
+        app:layout_constraintEnd_toEndOf="@+id/btShowDialog"
+        app:layout_constraintStart_toStartOf="@+id/btShowDialog"
+        app:layout_constraintTop_toBottomOf="@+id/btShowDialog" />
+
+    <Button
+        android:id="@+id/btCustomView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom View"
+        app:layout_constraintEnd_toEndOf="@+id/btShowViewModel"
+        app:layout_constraintStart_toStartOf="@+id/btShowViewModel"
+        app:layout_constraintTop_toBottomOf="@+id/btShowViewModel" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/btCustomView"
+        app:layout_constraintStart_toStartOf="@+id/btCustomView"
+        app:layout_constraintTop_toBottomOf="@+id/btCustomView" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintEnd_toEndOf="@+id/button7"
+        app:layout_constraintStart_toStartOf="@+id/button7"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
+</androidx.constraintlayout.widget.ConstraintLayout>
