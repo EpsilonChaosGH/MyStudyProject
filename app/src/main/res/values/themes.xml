@@ -14,8 +14,23 @@
         <!-- Customize your theme here. -->
 
         <item name="materialButtonStyle">@style/MyButtonsStyle</item>
+        <item name="ticTacToeFieldStyle">@style/GlobalTicTacToeFieldStyle</item>
+
+
+
     </style>
     <style name="MyButtonsStyle" parent="Widget.MaterialComponents.Button">
         <item name="textAllCaps">false</item>
     </style>
+
+    <style name="DefaultTicTacToeFieldStyle">
+        <item name="player1Color">#008800</item>
+        <item name="player2Color">#880000</item>
+        <item name="gridColor">#dfdfdf</item>
+    </style>
+
+    <style name="GlobalTicTacToeFieldStyle" parent="DefaultTicTacToeFieldStyle">
+        <item name="player1Color">#0000ff</item>
+    </style>
+
 </resources>

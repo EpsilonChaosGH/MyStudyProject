@@ -45,6 +45,14 @@ class MenuFragment: Fragment() {
                 .commit()
         }
 
+        binding.btTicTacToe.setOnClickListener {
+            parentFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.fragmentContainerView, TicTacToeFragment())
+                .commit()
+        }
+
         return binding.root
     }
 

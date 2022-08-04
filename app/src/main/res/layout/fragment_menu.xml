@@ -34,10 +34,10 @@
         app:layout_constraintTop_toBottomOf="@+id/btShowViewModel" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btTicTacToe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="TicTacToe"
         app:layout_constraintEnd_toEndOf="@+id/btCustomView"
         app:layout_constraintStart_toStartOf="@+id/btCustomView"
         app:layout_constraintTop_toBottomOf="@+id/btCustomView" />
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        app:layout_constraintEnd_toEndOf="@+id/button7"
-        app:layout_constraintStart_toStartOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintEnd_toEndOf="@+id/btTicTacToe"
+        app:layout_constraintStart_toStartOf="@+id/btTicTacToe"
+        app:layout_constraintTop_toBottomOf="@+id/btTicTacToe" />
 </androidx.constraintlayout.widget.ConstraintLayout>
