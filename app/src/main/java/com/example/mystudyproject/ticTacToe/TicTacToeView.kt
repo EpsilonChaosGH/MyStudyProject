@@ -1,17 +1,15 @@
-package com.example.mystudyproject
+package com.example.mystudyproject.ticTacToe
 
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
-import android.media.AsyncPlayer
-import android.net.wifi.p2p.WifiP2pManager
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
-import kotlinx.android.synthetic.main.fragment_tictactoe.view.*
+import com.example.mystudyproject.R
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.properties.Delegates
@@ -51,8 +49,12 @@ class TicTacToeView(
     private lateinit var player2Paint: Paint
     private lateinit var gridPaint: Paint
 
-    constructor(context: Context,attributeSet: AttributeSet?, defStyleAttr: Int): this(context, attributeSet, defStyleAttr, R.style.DefaultTicTacToeFieldStyle)
-    constructor(context: Context, attributeSet: AttributeSet?): this(context, attributeSet, R.attr.ticTacToeFieldStyle)
+    constructor(context: Context,attributeSet: AttributeSet?, defStyleAttr: Int): this(context, attributeSet, defStyleAttr,
+        R.style.DefaultTicTacToeFieldStyle
+    )
+    constructor(context: Context, attributeSet: AttributeSet?): this(context, attributeSet,
+        R.attr.ticTacToeFieldStyle
+    )
     constructor(context: Context): this(context, null)
 
     init {
@@ -236,11 +238,12 @@ class TicTacToeView(
 
 
     private fun initAttributes(attributeSet: AttributeSet?, defStyleAttr: Int, defStyleRes: Int){
-        val typedArray = context.obtainStyledAttributes(attributeSet,R.styleable.TicTacToeView,defStyleAttr,defStyleRes)
+        val typedArray = context.obtainStyledAttributes(attributeSet,
+            R.styleable.TicTacToeView,defStyleAttr,defStyleRes)
 
-        player1Color = typedArray.getColor(R.styleable.TicTacToeView_player1Color,DEFAULT_COLOR)
-        player2Color = typedArray.getColor(R.styleable.TicTacToeView_player2Color,DEFAULT_COLOR)
-        gridColor = typedArray.getColor(R.styleable.TicTacToeView_gridColor,DEFAULT_COLOR)
+        player1Color = typedArray.getColor(R.styleable.TicTacToeView_player1Color, DEFAULT_COLOR)
+        player2Color = typedArray.getColor(R.styleable.TicTacToeView_player2Color, DEFAULT_COLOR)
+        gridColor = typedArray.getColor(R.styleable.TicTacToeView_gridColor, DEFAULT_COLOR)
 
 
 

@@ -1,6 +1,4 @@
-package com.example.mystudyproject
-
-import java.lang.reflect.Field
+package com.example.mystudyproject.ticTacToe
 
 enum class Cell {
     PLAYER_1,

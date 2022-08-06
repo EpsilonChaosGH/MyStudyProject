@@ -6,9 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.example.mystudyproject.databinding.FragmentMenuBinding
+import com.example.mystudyproject.recyclerView.RecyclerViewFragment
+import com.example.mystudyproject.ticTacToe.TicTacToeFragment
 
-class MenuFragment: Fragment() {
+class MenuFragment : Fragment() {
     private lateinit var binding: FragmentMenuBinding
 
     override fun onCreateView(
@@ -31,9 +34,12 @@ class MenuFragment: Fragment() {
             parentFragmentManager
                 .beginTransaction()
                 .addToBackStack(null)
-                .replace(R.id.fragmentContainerView,
-                    DialogsFragment.newInstance(DialogsFragment.Options("title", Color.RED),
-                        fragment)
+                .replace(
+                    R.id.fragmentContainerView,
+                    DialogsFragment.newInstance(
+                        DialogsFragment.Options("title", Color.RED),
+                        fragment
+                    )
                 )
                 .commit()
         }
@@ -50,6 +56,14 @@ class MenuFragment: Fragment() {
                 .beginTransaction()
                 .addToBackStack(null)
                 .replace(R.id.fragmentContainerView, TicTacToeFragment())
+                .commit()
+        }
+
+        binding.btRecyclerView.setOnClickListener {
+            parentFragmentManager
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.fragmentContainerView, RecyclerViewFragment())
                 .commit()
         }
 
