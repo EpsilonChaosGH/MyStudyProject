@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
-import android.widget.Toast
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mystudyproject.R
@@ -17,6 +17,28 @@ interface UserActionListener {
     fun onUserDetails(user: User)
 }
 
+class UsersDiffCallback(
+    private val oldList: List<User>,
+    private val newList: List<User>
+): DiffUtil.Callback() {
+    override fun getOldListSize() = oldList.size
+
+    override fun getNewListSize() = newList.size
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        val oldUser = oldList[oldItemPosition]
+        val newUser = newList[newItemPosition]
+        return oldUser.id == newUser.id
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        val oldUser = oldList[oldItemPosition]
+        val newUser = newList[newItemPosition]
+        return oldUser == newUser
+    }
+}
+
+
 class UsersAdapter(
     private val actionListener: UserActionListener
 ) : RecyclerView.Adapter<UsersAdapter.UsersViewHolder>(), View.OnClickListener {
@@ -25,9 +47,11 @@ class UsersAdapter(
     ) : RecyclerView.ViewHolder(binding.root)
 
     var users: List<User> = emptyList()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
+        set(newValue) {
+            val diffCallback = UsersDiffCallback(field, newValue)
+            val diffResult = DiffUtil.calculateDiff(diffCallback)
+            field = newValue
+            diffResult.dispatchUpdatesTo(this)
         }
 
 

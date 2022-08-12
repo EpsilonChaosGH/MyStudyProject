@@ -50,4 +50,13 @@
         app:layout_constraintEnd_toEndOf="@+id/btTicTacToe"
         app:layout_constraintStart_toStartOf="@+id/btTicTacToe"
         app:layout_constraintTop_toBottomOf="@+id/btTicTacToe" />
+
+    <Button
+        android:id="@+id/btMVVM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MVVM"
+        app:layout_constraintEnd_toEndOf="@+id/btRecyclerView"
+        app:layout_constraintStart_toStartOf="@+id/btRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/btRecyclerView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

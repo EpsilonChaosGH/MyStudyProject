@@ -40,7 +40,6 @@ class RecyclerViewFragment : Fragment() {
 
         })
 
-
         val layoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
@@ -49,6 +48,11 @@ class RecyclerViewFragment : Fragment() {
         usersService.addListener(usersListener)
 
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        usersService.removeListener(usersListener)
     }
 
     private val usersListener: UsersListener = {

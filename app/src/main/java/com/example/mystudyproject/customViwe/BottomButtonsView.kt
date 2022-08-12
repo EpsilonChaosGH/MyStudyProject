@@ -1,4 +1,4 @@
-package com.example.mystudyproject
+package com.example.mystudyproject.customViwe
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -8,6 +8,7 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.PartButtonsBinding
 
 enum class BottomButtonAction{ POSITIVE, NEGATIVE }
@@ -36,7 +37,8 @@ class BottomButtonsView(context: Context, attrs: AttributeSet?, defStyleAttr: In
 
     private fun initAttrs(context: Context, attrs: AttributeSet?, defStyleAttr: Int, desStyleRes: Int){
         if (attrs == null) return
-        val typedArray = context.obtainStyledAttributes(attrs, R.styleable.BottomButtonsView, defStyleAttr, desStyleRes)
+        val typedArray = context.obtainStyledAttributes(attrs,
+            R.styleable.BottomButtonsView, defStyleAttr, desStyleRes)
 
         val positiveButtonText = typedArray.getString(R.styleable.BottomButtonsView_bottomPositiveButtonText)
         setPositiveButtonText(positiveButtonText)

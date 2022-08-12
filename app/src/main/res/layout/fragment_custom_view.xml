@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.example.mystudyproject.BottomButtonsView
+    <com.example.mystudyproject.customViwe.BottomButtonsView
         android:id="@+id/bottomButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

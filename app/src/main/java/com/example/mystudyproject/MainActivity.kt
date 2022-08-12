@@ -1,14 +1,15 @@
 package com.example.mystudyproject
 
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.databinding.ActivityMainBinding
+import com.example.mystudyproject.mvvm.Droid
+import com.example.mystudyproject.mvvm.DroidDetailsFragment
+import com.example.mystudyproject.mvvm.Navigator
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), Navigator {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -24,5 +25,20 @@ class MainActivity : AppCompatActivity() {
                 .add(R.id.fragmentContainerView, fragment)
                 .commit()
         }
+    }
+    override fun showDetails(droid: Droid) {
+        supportFragmentManager
+            .beginTransaction()
+            .addToBackStack(null)
+            .replace(R.id.fragmentContainerView, DroidDetailsFragment.newInstance(droid.id))
+            .commit()
+    }
+
+    override fun goBack() {
+        onBackPressed()
+    }
+
+    override fun toast(massageRes: Int) {
+        Toast.makeText(this, massageRes, Toast.LENGTH_SHORT).show()
     }
 }

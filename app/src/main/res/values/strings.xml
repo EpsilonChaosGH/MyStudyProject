@@ -3,4 +3,9 @@
     <string name="move_up">Move up</string>
     <string name="move_down">Move down</string>
     <string name="remove">Remove</string>
+
+    <string name="droid_has_been_deleted">Droid has been deleted</string>
+    <string name="cant_load_droid_details">Can\'t load droid details</string>
+    <string name="cant_delete_droid">Can\'t delete the droid</string>
+    <string name="cant_move_droid">Can\'t move droid</string>
 </resources>

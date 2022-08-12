@@ -1,4 +1,4 @@
-package com.example.mystudyproject
+package com.example.mystudyproject.viewModel
 
 import android.graphics.Color
 import android.os.Bundle
@@ -11,9 +11,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
-import com.example.mystudyproject.DialogsFragment.Companion.OPTIONS_KEY
-import com.example.mystudyproject.DialogsFragment.Companion.SAVE_OPTIONS_KEY
+import com.example.mystudyproject.dialog.DialogsFragment.Companion.OPTIONS_KEY
+import com.example.mystudyproject.dialog.DialogsFragment.Companion.SAVE_OPTIONS_KEY
 import com.example.mystudyproject.databinding.FragmentViewmodelBinding
+import com.example.mystudyproject.dialog.DialogsFragment
 
 
 class ViewModelFragment : Fragment() {
@@ -36,12 +37,11 @@ class ViewModelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentViewmodelBinding.inflate(inflater, container, false)
-        viewModel.state.observe(requireActivity(), Observer {
+        viewModel.state.observe(viewLifecycleOwner, Observer {
 
             binding.textView.setTextColor(viewModel.state.value?.color ?: Color.GREEN)
             binding.textView.text = viewModel.state.value?.title
         })
-
 
         return binding.root
     }
@@ -59,7 +59,8 @@ class ViewModelFragment : Fragment() {
 
         private val stateLiveData = MutableLiveData<DialogsFragment.Options>()
         val state: LiveData<DialogsFragment.Options> = stateLiveData
-
     }
+
 }
+
 

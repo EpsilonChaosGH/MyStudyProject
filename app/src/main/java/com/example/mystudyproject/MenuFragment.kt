@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
+import com.example.mystudyproject.customViwe.CustomViewFragment
 import com.example.mystudyproject.databinding.FragmentMenuBinding
+import com.example.mystudyproject.dialog.DialogsFragment
+import com.example.mystudyproject.mvvm.DroidsListFragment
 import com.example.mystudyproject.recyclerView.RecyclerViewFragment
 import com.example.mystudyproject.ticTacToe.TicTacToeFragment
+import com.example.mystudyproject.viewModel.ViewModelFragment
 
 class MenuFragment : Fragment() {
     private lateinit var binding: FragmentMenuBinding
@@ -21,53 +24,35 @@ class MenuFragment : Fragment() {
     ): View? {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
 
-        binding.btShowDialog.setOnClickListener {
-            val fragment = DialogsFragment()
-            parentFragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
-                .replace(R.id.fragmentContainerView, fragment)
-                .commit()
-        }
         binding.btShowViewModel.setOnClickListener {
-            val fragment = ViewModelFragment()
-            parentFragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
-                .replace(
-                    R.id.fragmentContainerView,
-                    DialogsFragment.newInstance(
-                        DialogsFragment.Options("title", Color.RED),
-                        fragment
-                    )
+            launchFragment(
+                DialogsFragment.newInstance(
+                    DialogsFragment.Options("title", Color.RED),
+                    ViewModelFragment()
                 )
-                .commit()
-        }
-        binding.btCustomView.setOnClickListener {
-            parentFragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
-                .replace(R.id.fragmentContainerView, CustomViewFragment())
-                .commit()
+            )
         }
 
-        binding.btTicTacToe.setOnClickListener {
-            parentFragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
-                .replace(R.id.fragmentContainerView, TicTacToeFragment())
-                .commit()
-        }
+        binding.btShowDialog.setOnClickListener { launchFragment(DialogsFragment()) }
 
-        binding.btRecyclerView.setOnClickListener {
-            parentFragmentManager
-                .beginTransaction()
-                .addToBackStack(null)
-                .replace(R.id.fragmentContainerView, RecyclerViewFragment())
-                .commit()
-        }
+        binding.btCustomView.setOnClickListener { launchFragment(CustomViewFragment()) }
+
+        binding.btTicTacToe.setOnClickListener { launchFragment(TicTacToeFragment()) }
+
+        binding.btRecyclerView.setOnClickListener { launchFragment(RecyclerViewFragment()) }
+
+        binding.btMVVM.setOnClickListener { launchFragment(DroidsListFragment()) }
+
 
         return binding.root
+    }
+
+    private fun launchFragment(fragment: Fragment) {
+        parentFragmentManager
+            .beginTransaction()
+            .addToBackStack(null)
+            .replace(R.id.fragmentContainerView, fragment)
+            .commit()
     }
 
 }

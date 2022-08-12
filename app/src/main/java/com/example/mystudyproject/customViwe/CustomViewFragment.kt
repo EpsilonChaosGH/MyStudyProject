@@ -1,4 +1,4 @@
-package com.example.mystudyproject
+package com.example.mystudyproject.customViwe
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.databinding.FragmentCustomViewBinding
-import kotlinx.android.synthetic.main.fragment_menu.view.*
-import kotlinx.android.synthetic.main.part_buttons.view.*
 
 class CustomViewFragment: Fragment() {
     private lateinit var binding: FragmentCustomViewBinding
