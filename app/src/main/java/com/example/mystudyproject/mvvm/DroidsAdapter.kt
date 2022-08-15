@@ -23,8 +23,8 @@ interface DroidActionListener {
 }
 
 class DroidsDiffCallback(
-    private val oldList: List<Droid>,
-    private val newList: List<Droid>
+    private val oldList: List<DroidListItem>,
+    private val newList: List<DroidListItem>
 ) : DiffUtil.Callback() {
     override fun getOldListSize() = oldList.size
 
@@ -33,7 +33,7 @@ class DroidsDiffCallback(
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         val oldDroid = oldList[oldItemPosition]
         val newDroid = newList[newItemPosition]
-        return oldDroid.id == newDroid.id
+        return oldDroid.droid.id == newDroid.droid.id
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
@@ -52,12 +52,10 @@ class DroidsAdapter(
 
     var droids: List<DroidListItem> = emptyList()
         set(newValue) {
-            val diffCallback =
-                DroidsDiffCallback(field.map { d -> d.droid }, newValue.map { d -> d.droid })
+            val diffCallback = DroidsDiffCallback(field, newValue)
             val diffResult = DiffUtil.calculateDiff(diffCallback)
             field = newValue
             diffResult.dispatchUpdatesTo(this)
-            notifyDataSetChanged()
         }
 
     override fun onClick(v: View) {
@@ -93,12 +91,10 @@ class DroidsAdapter(
             holder.binding.imageViewMore.visibility = View.INVISIBLE
             holder.binding.progressBar.visibility = View.VISIBLE
             holder.binding.root.setOnClickListener(null)
-            Log.e("aaa", "if")
         } else {
             holder.binding.imageViewMore.visibility = View.VISIBLE
             holder.binding.progressBar.visibility = View.GONE
             holder.binding.root.setOnClickListener(this@DroidsAdapter)
-            Log.e("aaa", "else")
         }
 
         holder.binding.droidNameTextView.text = droid.name

@@ -53,6 +53,7 @@ class DroidDetailsViewModel(
                 _state.value = currentState.copy(deleteInProgress = false)
                 _actionShowToast.value = Event(R.string.cant_delete_droid)
             }
+            .autoCancel()
     }
 
     data class State(

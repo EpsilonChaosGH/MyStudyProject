@@ -9,7 +9,7 @@
         android:id="@+id/btShowDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="open dialog"
+        android:text="Open Dialog"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +19,7 @@
         android:id="@+id/btShowViewModel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show ViewModel"
+        android:text="ViewModel"
         app:layout_constraintEnd_toEndOf="@+id/btShowDialog"
         app:layout_constraintStart_toStartOf="@+id/btShowDialog"
         app:layout_constraintTop_toBottomOf="@+id/btShowDialog" />
@@ -59,4 +59,13 @@
         app:layout_constraintEnd_toEndOf="@+id/btRecyclerView"
         app:layout_constraintStart_toStartOf="@+id/btRecyclerView"
         app:layout_constraintTop_toBottomOf="@+id/btRecyclerView" />
+
+    <Button
+        android:id="@+id/btSavedStateModule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saved State Module"
+        app:layout_constraintEnd_toEndOf="@+id/btMVVM"
+        app:layout_constraintStart_toStartOf="@+id/btMVVM"
+        app:layout_constraintTop_toBottomOf="@+id/btMVVM" />
 </androidx.constraintlayout.widget.ConstraintLayout>

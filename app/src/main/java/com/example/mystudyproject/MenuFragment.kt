@@ -11,6 +11,7 @@ import com.example.mystudyproject.databinding.FragmentMenuBinding
 import com.example.mystudyproject.dialog.DialogsFragment
 import com.example.mystudyproject.mvvm.DroidsListFragment
 import com.example.mystudyproject.recyclerView.RecyclerViewFragment
+import com.example.mystudyproject.savedStateModule.ColorsGeneratorFragment
 import com.example.mystudyproject.ticTacToe.TicTacToeFragment
 import com.example.mystudyproject.viewModel.ViewModelFragment
 
@@ -42,6 +43,8 @@ class MenuFragment : Fragment() {
         binding.btRecyclerView.setOnClickListener { launchFragment(RecyclerViewFragment()) }
 
         binding.btMVVM.setOnClickListener { launchFragment(DroidsListFragment()) }
+
+        binding.btSavedStateModule.setOnClickListener { launchFragment(ColorsGeneratorFragment()) }
 
 
         return binding.root
