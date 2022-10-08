@@ -60,31 +60,6 @@ class UsersService {
 
 }
 
-
-typealias TestListener = (List<Test>) -> Unit
-
-class Test(
-    val x: Int
-    )
-
-fun main() {
-
-    val listeners = mutableSetOf<TestListener>()
-    var tests = mutableListOf<Test>(Test(1), Test(2), Test(3))
-
-    fun addListener(listener: TestListener) {
-        listeners.add(listener)
-        listener.invoke(tests)
-    }
-
-    val testListener: TestListener = {
-    var newTestList = it
-    }
-
-    addListener(testListener)
-
-
-
 //    val list = listOf("1", "2", "3", "4", "5")
 //
 //    fun<T, R>Collection<T>.recycle(r: R, function: (T, R) -> T): MutableCollection<T>{
@@ -131,4 +106,3 @@ fun main() {
 //    println("product = $product")
 //
 
-}
