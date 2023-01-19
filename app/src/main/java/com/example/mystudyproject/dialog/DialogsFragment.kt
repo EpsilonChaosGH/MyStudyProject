@@ -103,6 +103,7 @@ class DialogsFragment : Fragment() {
     companion object {
         @JvmStatic
         val OPTIONS_KEY = "OPTIONS_KEY"
+
         @JvmStatic
         val SAVE_OPTIONS_KEY = "SAVE_OPTIONS_KEY"
 
@@ -113,11 +114,12 @@ class DialogsFragment : Fragment() {
             return fragment
         }
     }
+
     @Parcelize
     data class Options(
         val title: String,
         val color: Int
-    ): Parcelable
+    ) : Parcelable
 
 
 }
