@@ -20,7 +20,7 @@ interface UserActionListener {
 class UsersDiffCallback(
     private val oldList: List<User>,
     private val newList: List<User>
-): DiffUtil.Callback() {
+) : DiffUtil.Callback() {
     override fun getOldListSize() = oldList.size
 
     override fun getNewListSize() = newList.size

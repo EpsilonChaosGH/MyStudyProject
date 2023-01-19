@@ -1,11 +1,8 @@
 package com.example.mystudyproject.mvvm
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.mystudyproject.R
-import kotlin.math.log
 
 data class DroidListItem(
     val droid: Droid,

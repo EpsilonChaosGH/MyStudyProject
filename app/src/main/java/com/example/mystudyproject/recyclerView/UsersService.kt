@@ -1,7 +1,5 @@
 package com.example.mystudyproject.recyclerView
 
-import android.util.Log
-import android.widget.Toast
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -57,52 +55,4 @@ class UsersService {
         Collections.swap(users, oldIndex, newIndex)
         notifyChanges()
     }
-
 }
-
-//    val list = listOf("1", "2", "3", "4", "5")
-//
-//    fun<T, R>Collection<T>.recycle(r: R, function: (T, R) -> T): MutableCollection<T>{
-//        val newCollection = mutableListOf<T>()
-//        for (i in this){
-//            newCollection.add(function(i,r))
-//        }
-//        return newCollection
-//    }
-//
-//    val listCopy = list.recycle(8){a, b -> a + b}
-//
-//    println(listCopy)
-//
-//
-//    fun <T, R> Collection<T>.fold(initial: R, combine: (acc: R, nextElement: T) -> R): R {
-//
-//        var accumulator: R = initial
-//        for (element: T in this) {
-//            accumulator = combine(accumulator, element)
-//        }
-//        return accumulator
-//    }
-//
-//    val sum: (Int, Int) -> Int = { x: Int, y: Int -> x + y }
-//
-//    val items = listOf(1, 2, 3, 4, 5)
-//
-//
-//    items.fold(0) { acc: Int, i: Int ->
-//        print("acc = $acc, i = $i, ")
-//        val result = acc + i
-//        println("result = $result")
-//        result
-//    }
-//
-//    // Типы параметров в лямбде необязательны, если они могут быть выведены:
-//    val joinedToString = items.fold("Elements:", { acc, i -> acc + " " + i })
-//
-//    // Ссылки на функции также могут использоваться для вызовов функций высшего порядка:
-//    val product = items.fold(1, Int::times)
-//
-//    println("joinedToString = $joinedToString")
-//    println("product = $product")
-//
-
