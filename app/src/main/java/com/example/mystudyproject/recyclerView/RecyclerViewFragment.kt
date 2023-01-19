@@ -37,13 +37,11 @@ class RecyclerViewFragment : Fragment() {
             override fun onUserDetails(user: User) {
                 Toast.makeText(requireActivity(), "more", Toast.LENGTH_SHORT).show()
             }
-
         })
 
         val layoutManager = LinearLayoutManager(requireActivity())
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.adapter = adapter
-
 
         usersService.addListener(usersListener)
 
