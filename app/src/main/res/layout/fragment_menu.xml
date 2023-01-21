@@ -9,8 +9,8 @@
         android:id="@+id/btShowDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:text="Open Dialog"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -68,4 +68,13 @@
         app:layout_constraintEnd_toEndOf="@+id/btMVVM"
         app:layout_constraintStart_toStartOf="@+id/btMVVM"
         app:layout_constraintTop_toBottomOf="@+id/btMVVM" />
+
+    <Button
+        android:id="@+id/btNavigationTabs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigation Tabs"
+        app:layout_constraintEnd_toEndOf="@+id/btSavedStateModule"
+        app:layout_constraintStart_toStartOf="@+id/btSavedStateModule"
+        app:layout_constraintTop_toBottomOf="@+id/btSavedStateModule" />
 </androidx.constraintlayout.widget.ConstraintLayout>

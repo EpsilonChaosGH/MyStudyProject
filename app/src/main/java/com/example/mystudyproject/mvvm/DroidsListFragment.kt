@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mystudyproject.databinding.FragmentDroidListBinding
+import com.example.mystudyproject.factory
+import com.example.mystudyproject.navigator
 
 class DroidsListFragment : Fragment() {
 

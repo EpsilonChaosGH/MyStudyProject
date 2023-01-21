@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), Navigator {
                 .commit()
         }
     }
+
     override fun showDetails(droid: Droid) {
         supportFragmentManager
             .beginTransaction()

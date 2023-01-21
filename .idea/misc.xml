@@ -13,10 +13,14 @@
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_droid_details.xml" value="0.4" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_droid_list.xml" value="0.4" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_edit.xml" value="0.4" />
+        <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_first.xml" value="0.4" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_hello.xml" value="0.4" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_menu.xml" value="0.39895833333333336" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_mvvm.xml" value="0.39895833333333336" />
+        <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_navigate.xml" value="0.39895833333333336" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_recycler_view.xml" value="0.39895833333333336" />
+        <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_second.xml" value="0.4" />
+        <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_tabs.xml" value="0.4" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_tictactoe.xml" value="0.39895833333333336" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_user_details.xml" value="0.39895833333333336" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/fragment_user_list.xml" value="0.39895833333333336" />
@@ -24,6 +28,7 @@
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/item_droid.xml" value="0.4" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/item_user.xml" value="0.39895833333333336" />
         <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/layout/part_buttons.xml" value="0.4" />
+        <entry key="..\:/Users/darkn/AndroidStudioProjects/MyStudyProject/app/src/main/res/menu/tabs_menu.xml" value="0.4" />
       </map>
     </option>
   </component>
