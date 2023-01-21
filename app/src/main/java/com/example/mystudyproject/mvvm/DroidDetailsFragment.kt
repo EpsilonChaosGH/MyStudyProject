@@ -11,6 +11,8 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.FragmentDroidDetailsBinding
+import com.example.mystudyproject.factory
+import com.example.mystudyproject.navigator
 
 class DroidDetailsFragment : Fragment() {
 
