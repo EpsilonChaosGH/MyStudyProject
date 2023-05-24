@@ -3,10 +3,10 @@ package com.example.mystudyproject.mvvm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.mystudyproject.R
-import dagger.hilt.android.scopes.ViewModelScoped
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@ViewModelScoped
+@HiltViewModel
 class DroidDetailsViewModel @Inject constructor(
     private val droidService: DroidService
 ) : BaseViewModel() {

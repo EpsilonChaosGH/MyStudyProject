@@ -21,7 +21,7 @@ class DroidDetailsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.loadDroid(requireArguments().getLong(ARG_DROID_ID))
+            viewModel.loadDroid(requireArguments().getLong(ARG_DROID_ID))
     }
 
     override fun onCreateView(
