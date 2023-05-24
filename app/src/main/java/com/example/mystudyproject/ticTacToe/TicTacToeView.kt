@@ -214,6 +214,7 @@ class TicTacToeView(
                 when(cell){
                 Cell.PLAYER_1 -> drawPlayer1(canvas, row, column)
                 Cell.PLAYER_2 -> drawPlayer2(canvas, row, column)
+                    else -> {}
                 }
 
             }

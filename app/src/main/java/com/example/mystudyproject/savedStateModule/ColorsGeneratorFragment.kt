@@ -11,13 +11,14 @@ import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
 import androidx.core.view.setMargins
 import androidx.fragment.app.viewModels
 import com.example.mystudyproject.R
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class ColorsGeneratorFragment : Fragment() {
 
 
     lateinit var binding: FragmentColorsGeneratorBinding
-    private val viewModel by viewModels<ViewModel> { ViewModelFactory(this) }
+    private val viewModel by viewModels<ViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

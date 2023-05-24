@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.databinding.FragmentTictactoeBinding
-import kotlinx.android.synthetic.main.fragment_tictactoe.*
 import kotlin.random.Random
 
 class TicTacToeFragment : Fragment() {
@@ -25,12 +24,13 @@ class TicTacToeFragment : Fragment() {
 
         binding.ticTacToeView.ticTacToeField = TicTacToeField(10, 10)
 
+
         binding.btRandom.setOnClickListener {
-            ticTacToeView.ticTacToeField = TicTacToeField(
+            binding.ticTacToeView.ticTacToeField = TicTacToeField(
                 Random.nextInt(3, 50),
                 Random.nextInt(3, 50)
             )
-            ticTacToeView.ticTacToeField!!.setSell(3,4, Cell.PLAYER_2)
+            binding.ticTacToeView.ticTacToeField!!.setSell(3,4, Cell.PLAYER_2)
         }
 
         binding.ticTacToeView.actionListener = { row, column, field ->

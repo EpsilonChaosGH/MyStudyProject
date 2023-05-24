@@ -49,10 +49,6 @@ class DialogsFragment : Fragment() {
         }
 
 
-
-
-
-
         class ValuesDialog2(
             var values: List<Int>,
             var currentIndex: Int

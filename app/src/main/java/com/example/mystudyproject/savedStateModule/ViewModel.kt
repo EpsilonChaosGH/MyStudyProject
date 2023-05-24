@@ -3,9 +3,12 @@ package com.example.mystudyproject.savedStateModule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlin.random.Random
 
-class ViewModel(
+@HiltViewModel
+class ViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
