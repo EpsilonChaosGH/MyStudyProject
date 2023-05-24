@@ -4,8 +4,11 @@ import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class RepositoryImpl : Repository {
+@Singleton
+class RepositoryImpl @Inject constructor() : Repository {
 
     private var number = 0
 

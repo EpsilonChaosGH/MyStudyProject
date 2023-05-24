@@ -9,15 +9,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mystudyproject.databinding.FragmentDroidListBinding
-import com.example.mystudyproject.factory
 import com.example.mystudyproject.navigator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DroidsListFragment : Fragment() {
 
     private lateinit var binding: FragmentDroidListBinding
     private lateinit var adapter: DroidsAdapter
 
-    private val viewModel: DroidsListViewModel by viewModels { factory() }
+    private val viewModel: DroidsListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,

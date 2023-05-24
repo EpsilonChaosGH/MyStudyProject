@@ -11,13 +11,14 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.FragmentDroidDetailsBinding
-import com.example.mystudyproject.factory
 import com.example.mystudyproject.navigator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DroidDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentDroidDetailsBinding
-    private val viewModel: DroidDetailsViewModel by viewModels { factory() }
+    private val viewModel: DroidDetailsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

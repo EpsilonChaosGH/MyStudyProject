@@ -7,13 +7,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.FragmentSecondBinding
-import com.example.mystudyproject.factory
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class SecondFragment : Fragment(R.layout.fragment_second) {
 
     private lateinit var binding: FragmentSecondBinding
-    private val viewModel: SecondViewModel by viewModels { factory() }
+    private val viewModel: SecondViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

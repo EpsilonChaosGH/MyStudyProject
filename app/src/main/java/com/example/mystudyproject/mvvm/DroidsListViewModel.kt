@@ -3,13 +3,16 @@ package com.example.mystudyproject.mvvm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.mystudyproject.R
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 data class DroidListItem(
     val droid: Droid,
     val isInProgress: Boolean
 )
 
-class DroidsListViewModel(
+@HiltViewModel
+class DroidsListViewModel @Inject constructor(
     private val droidService: DroidService
 ) : BaseViewModel(), DroidActionListener {
 

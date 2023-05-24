@@ -3,9 +3,12 @@ package com.example.mystudyproject.mvvm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.mystudyproject.R
+import dagger.hilt.android.scopes.ViewModelScoped
+import javax.inject.Inject
 import kotlin.math.E
 
-class DroidDetailsViewModel(
+@ViewModelScoped
+class DroidDetailsViewModel @Inject constructor(
     private val droidService: DroidService
 ) : BaseViewModel() {
 

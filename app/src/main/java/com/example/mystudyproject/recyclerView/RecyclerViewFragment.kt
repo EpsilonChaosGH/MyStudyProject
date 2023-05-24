@@ -15,8 +15,7 @@ class RecyclerViewFragment : Fragment() {
     private lateinit var binding: FragmentRecyclerViewBinding
     private lateinit var adapter: UsersAdapter
 
-    private val usersService: UsersService
-        get() = (requireActivity().applicationContext as App).usersService
+    private val usersService: UsersService = UsersService()
 
     override fun onCreateView(
         inflater: LayoutInflater,
