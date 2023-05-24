@@ -8,7 +8,9 @@ import com.example.mystudyproject.databinding.ActivityMainBinding
 import com.example.mystudyproject.mvvm.Droid
 import com.example.mystudyproject.mvvm.DroidDetailsFragment
 import com.example.mystudyproject.mvvm.Navigator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), Navigator {
 
     private lateinit var binding: ActivityMainBinding
@@ -36,7 +38,7 @@ class MainActivity : AppCompatActivity(), Navigator {
     }
 
     override fun goBack() {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
     }
 
     override fun toast(massageRes: Int) {

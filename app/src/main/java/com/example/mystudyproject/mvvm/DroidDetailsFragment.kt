@@ -7,39 +7,39 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import com.bumptech.glide.Glide
 import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.FragmentDroidDetailsBinding
-import com.example.mystudyproject.factory
 import com.example.mystudyproject.navigator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DroidDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentDroidDetailsBinding
-    private val viewModel: DroidDetailsViewModel by viewModels { factory() }
+    private val viewModel: DroidDetailsViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.loadDroid(requireArguments().getLong(ARG_DROID_ID))
+            viewModel.loadDroid(requireArguments().getLong(ARG_DROID_ID))
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDroidDetailsBinding.inflate(inflater, container, false)
 
-        viewModel.actionShowToast.observe(viewLifecycleOwner, Observer {
+        viewModel.actionShowToast.observe(viewLifecycleOwner) {
             it.getValue()?.let { massageRes -> navigator().toast(massageRes) }
-        })
+        }
 
-        viewModel.actionGoBack.observe(viewLifecycleOwner, Observer {
+        viewModel.actionGoBack.observe(viewLifecycleOwner) {
             it.getValue()?.let { navigator().goBack() }
-        })
+        }
 
-        viewModel.state.observe(viewLifecycleOwner, Observer {
+        viewModel.state.observe(viewLifecycleOwner) {
             binding.contentContainer.visibility = if (it.showContent) {
                 val droidDetails = (it.droidDetailsResult as SuccessResult).data
                 binding.droidNameTextView.text = droidDetails.droid.name
@@ -60,7 +60,7 @@ class DroidDetailsFragment : Fragment() {
             }
             binding.progressBar.visibility = if (it.showProgress) View.VISIBLE else View.GONE
             binding.deleteButton.isEnabled = it.enableDeleteBottom
-        })
+        }
 
         binding.deleteButton.setOnClickListener {
             viewModel.deleteDroid()

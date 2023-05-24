@@ -3,9 +3,11 @@ package com.example.mystudyproject.mvvm
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.mystudyproject.R
-import kotlin.math.E
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class DroidDetailsViewModel(
+@HiltViewModel
+class DroidDetailsViewModel @Inject constructor(
     private val droidService: DroidService
 ) : BaseViewModel() {
 

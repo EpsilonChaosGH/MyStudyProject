@@ -1,18 +1,15 @@
 package com.example.mystudyproject.mvvm
 
 import android.app.usage.UsageEvents.Event.NONE
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.ItemDroidBinding
-import com.example.mystudyproject.databinding.ItemUserBinding
 
 interface DroidActionListener {
     fun onDroidMove(droid: Droid, moveBy: Int)
@@ -64,6 +61,7 @@ class DroidsAdapter(
             R.id.imageViewMore -> {
                 showPopupMenu(v)
             }
+
             else -> {
                 actionListener.onDroidDetails(droid)
             }
@@ -131,9 +129,11 @@ class DroidsAdapter(
                 ID_MOVE_UP -> {
                     actionListener.onDroidMove(droid, -1)
                 }
+
                 ID_MOVE_DOWN -> {
                     actionListener.onDroidMove(droid, 1)
                 }
+
                 ID_REMOVE -> {
                     actionListener.onDroidDelete(droid)
                 }

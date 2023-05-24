@@ -35,13 +35,12 @@ class ViewModelFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentViewmodelBinding.inflate(inflater, container, false)
-        viewModel.state.observe(viewLifecycleOwner, Observer {
-
+        viewModel.state.observe(viewLifecycleOwner) {
             binding.textView.setTextColor(viewModel.state.value?.color ?: Color.GREEN)
             binding.textView.text = viewModel.state.value?.title
-        })
+        }
 
         return binding.root
     }
@@ -51,7 +50,7 @@ class ViewModelFragment : Fragment() {
         outState.putParcelable(SAVE_OPTIONS_KEY, viewModel.state.value)
     }
 
-    class StateViewModel: ViewModel() {
+    class StateViewModel : ViewModel() {
 
         fun initState(options: DialogsFragment.Options) {
             stateLiveData.value = options

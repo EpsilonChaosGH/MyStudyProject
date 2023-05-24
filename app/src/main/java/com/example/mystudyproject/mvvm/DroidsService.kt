@@ -3,7 +3,6 @@ package com.example.mystudyproject.mvvm
 import java.util.*
 import java.util.concurrent.Callable
 import kotlin.collections.ArrayList
-import kotlin.concurrent.thread
 
 typealias DroidsListener = (droids: List<Droid>) -> Unit
 
@@ -13,8 +12,7 @@ class DroidService {
     private var droids = mutableListOf<Droid>()
     private var loaded = false
 
-
-    fun loadDroid(): Task<Unit> = SimpleTask<Unit>(Callable {
+    fun loadDroid(): Task<Unit> = SimpleTask {
         Thread.sleep(1000)
         droids = (1..50).map {
             Droid(
@@ -27,17 +25,17 @@ class DroidService {
         }.toMutableList()
         loaded = true
         notifyChanges()
-    })
+    }
 
 
-    fun getById(id: Long): Task<DroidDetails> = SimpleTask<DroidDetails>(Callable {
+    fun getById(id: Long): Task<DroidDetails> = SimpleTask(Callable {
         Thread.sleep(1000)
         val droid = droids.firstOrNull { it.id == id } ?: throw DroidNotFoundException()
         return@Callable DroidDetails(droid, "DETAILS")
     })
 
 
-    fun deleteDroid(droid: Droid): Task<Unit> = SimpleTask<Unit>(Callable {
+    fun deleteDroid(droid: Droid): Task<Unit> = SimpleTask {
         Thread.sleep(1000)
         val indexToDelete = droids.indexOfFirst { it.id == droid.id }
         if (indexToDelete != -1) {
@@ -45,9 +43,9 @@ class DroidService {
             droids.removeAt(indexToDelete)
         }
         notifyChanges()
-    })
+    }
 
-    fun moveDroid(droid: Droid, moveBy: Int): Task<Unit> = SimpleTask<Unit>(Callable {
+    fun moveDroid(droid: Droid, moveBy: Int): Task<Unit> = SimpleTask(Callable {
         Thread.sleep(1000)
         val oldIndex = droids.indexOfFirst { it.id == droid.id }
         if (oldIndex == -1) return@Callable

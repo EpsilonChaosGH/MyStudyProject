@@ -1,5 +1,6 @@
 package com.example.mystudyproject.ticTacToe
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
@@ -130,15 +131,15 @@ class TicTacToeView(
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        var minWidth = suggestedMinimumWidth + paddingLeft + paddingRight
-        var minHeight = suggestedMinimumHeight + paddingBottom + paddingTop
-        var desiredCellSizeInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, DESIRED_CELL_SIZE, resources.displayMetrics).toInt()
+        val minWidth = suggestedMinimumWidth + paddingLeft + paddingRight
+        val minHeight = suggestedMinimumHeight + paddingBottom + paddingTop
+        val desiredCellSizeInPixels = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, DESIRED_CELL_SIZE, resources.displayMetrics).toInt()
 
         val columns = ticTacToeField?.columns ?: 0
         val rows = ticTacToeField?.rows ?: 0
 
-        var desiredWidth = max(minWidth, columns * desiredCellSizeInPixels + paddingLeft + paddingRight)
-        var desiredHeight = max(minHeight, rows * desiredCellSizeInPixels + paddingTop + paddingBottom)
+        val desiredWidth = max(minWidth, columns * desiredCellSizeInPixels + paddingLeft + paddingRight)
+        val desiredHeight = max(minHeight, rows * desiredCellSizeInPixels + paddingTop + paddingBottom)
         setMeasuredDimension(
             resolveSize(desiredWidth, widthMeasureSpec),
             resolveSize(desiredHeight, heightMeasureSpec)
@@ -160,6 +161,7 @@ class TicTacToeView(
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
         val field = this.ticTacToeField ?: return false
         when(event.action){
@@ -209,23 +211,24 @@ class TicTacToeView(
 
         for (row in 0 until field.rows ){
             for (column in 0 until field.columns){
-                var cell = field.getSell(row, column)
+                val cell = field.getSell(row, column)
 
                 when(cell){
                 Cell.PLAYER_1 -> drawPlayer1(canvas, row, column)
                 Cell.PLAYER_2 -> drawPlayer2(canvas, row, column)
+                    else -> {}
                 }
 
             }
         }
     }
     private fun drawPlayer1(canvas: Canvas, row: Int, column: Int){
-        var cellRect = getCellRect(row, column)
+        val cellRect = getCellRect(row, column)
         canvas.drawLine(cellRect.left, cellRect.top, cellRect.right, cellRect.bottom, player1Paint)
         canvas.drawLine(cellRect.right, cellRect.top, cellRect.left, cellRect.bottom, player1Paint)
     }
     private fun drawPlayer2(canvas: Canvas, row: Int, column: Int){
-        var cellRect = getCellRect(row, column)
+        val cellRect = getCellRect(row, column)
         canvas.drawCircle(cellRect.centerX(), cellRect.centerY(),cellRect.width() / 2, player2Paint)
     }
     private fun getCellRect( row: Int, column: Int): RectF{

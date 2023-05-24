@@ -6,13 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
 import com.example.mystudyproject.customViwe.CustomViewFragment
 import com.example.mystudyproject.databinding.FragmentMenuBinding
 import com.example.mystudyproject.dialog.DialogsFragment
 import com.example.mystudyproject.mvvm.DroidsListFragment
 import com.example.mystudyproject.navigationTabs.ContainerFragment
-import com.example.mystudyproject.navigationTabs.TabsFragment
 import com.example.mystudyproject.recyclerView.RecyclerViewFragment
 import com.example.mystudyproject.savedStateModule.ColorsGeneratorFragment
 import com.example.mystudyproject.ticTacToe.TicTacToeFragment
@@ -25,7 +23,7 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
 
         binding.btShowViewModel.setOnClickListener {
