@@ -11,7 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.FragmentDialogsBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 class DialogsFragment : Fragment() {
     private lateinit var binding: FragmentDialogsBinding
@@ -20,7 +20,7 @@ class DialogsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentDialogsBinding.inflate(inflater, container, false)
 
 

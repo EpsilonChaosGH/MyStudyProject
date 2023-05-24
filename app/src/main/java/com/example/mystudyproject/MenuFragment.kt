@@ -23,7 +23,7 @@ class MenuFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
 
         binding.btShowViewModel.setOnClickListener {

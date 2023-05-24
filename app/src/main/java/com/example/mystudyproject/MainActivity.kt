@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), Navigator {
     }
 
     override fun goBack() {
-        onBackPressed()
+        onBackPressedDispatcher.onBackPressed()
     }
 
     override fun toast(massageRes: Int) {

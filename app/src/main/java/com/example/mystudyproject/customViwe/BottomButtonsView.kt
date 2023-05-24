@@ -26,7 +26,6 @@ class BottomButtonsView(context: Context, attrs: AttributeSet?, defStyleAttr: In
         constructor(context: Context): this(context,null)
 
 
-
     init {
         val inflater = LayoutInflater.from(context)
         inflater.inflate(R.layout.part_buttons, this, true)
@@ -76,7 +75,7 @@ class BottomButtonsView(context: Context, attrs: AttributeSet?, defStyleAttr: In
         binding.btCancel.text = text ?: "CANCEL"
     }
 
-    override fun onSaveInstanceState(): Parcelable? {
+    override fun onSaveInstanceState(): Parcelable {
         val superState = super.onSaveInstanceState()!!
         val savedState = SavedState(superState)
         savedState.positiveButtonText = binding.btOk.text.toString()

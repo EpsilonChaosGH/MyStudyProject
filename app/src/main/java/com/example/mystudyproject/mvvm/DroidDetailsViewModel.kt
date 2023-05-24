@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import com.example.mystudyproject.R
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
-import kotlin.math.E
 
 @ViewModelScoped
 class DroidDetailsViewModel @Inject constructor(

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.databinding.FragmentColorsGeneratorBinding
-import kotlin.random.Random
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
 import androidx.core.view.setMargins
 import androidx.fragment.app.viewModels
@@ -24,7 +23,7 @@ class ColorsGeneratorFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentColorsGeneratorBinding.inflate(inflater, container, false)
 
 

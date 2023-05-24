@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.mystudyproject.R
 import com.example.mystudyproject.databinding.FragmentFirstBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,11 +28,13 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
                 viewModel.getRandomNumber()
             }
         }
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.state.collect {
-                binding.textView.text = it.toString()
-            }
 
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.state.collect {
+                    binding.textView.text = it.toString()
+                }
+            }
         }
     }
 }

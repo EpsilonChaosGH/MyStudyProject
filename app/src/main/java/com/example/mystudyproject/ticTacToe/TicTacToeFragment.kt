@@ -17,7 +17,7 @@ class TicTacToeFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentTictactoeBinding.inflate(inflater, container, false)
 
 

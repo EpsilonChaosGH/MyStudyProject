@@ -36,12 +36,15 @@ class DroidsListFragment : Fragment() {
                     binding.recyclerView.visibility = View.VISIBLE
                     adapter.droids = it.data
                 }
+
                 is ErrorResult -> {
                     binding.tryAgain.visibility = View.VISIBLE
                 }
+
                 is PendingResult -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
+
                 is EmptyResult -> {
                     binding.noDroidsTextView.visibility = View.VISIBLE
                 }
