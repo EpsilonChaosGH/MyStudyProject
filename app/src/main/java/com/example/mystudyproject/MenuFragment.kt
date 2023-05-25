@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.customViwe.CustomViewFragment
+import com.example.mystudyproject.daggerAndHilt.hilt.HiltTestFragment
 import com.example.mystudyproject.databinding.FragmentMenuBinding
 import com.example.mystudyproject.dialog.DialogsFragment
 import com.example.mystudyproject.mvvm.DroidsListFragment
@@ -48,6 +49,8 @@ class MenuFragment : Fragment() {
         binding.btSavedStateModule.setOnClickListener { launchFragment(ColorsGeneratorFragment()) }
 
         binding.btNavigationTabs.setOnClickListener { launchFragment(ContainerFragment()) }
+
+        binding.btHilt.setOnClickListener { launchFragment(HiltTestFragment()) }
 
         return binding.root
     }
