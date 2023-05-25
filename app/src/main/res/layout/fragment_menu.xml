@@ -79,11 +79,20 @@
         app:layout_constraintTop_toBottomOf="@+id/btSavedStateModule" />
 
     <Button
-        android:id="@+id/btResTest"
+        android:id="@+id/btDagger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RES"
-        app:layout_constraintEnd_toEndOf="@+id/btSavedStateModule"
-        app:layout_constraintStart_toStartOf="@+id/btSavedStateModule"
+        android:text="DAGGER"
+        app:layout_constraintEnd_toEndOf="@+id/btNavigationTabs"
+        app:layout_constraintStart_toStartOf="@+id/btNavigationTabs"
         app:layout_constraintTop_toBottomOf="@+id/btNavigationTabs" />
+
+    <Button
+        android:id="@+id/btHilt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HILT"
+        app:layout_constraintEnd_toEndOf="@+id/btDagger"
+        app:layout_constraintStart_toStartOf="@+id/btDagger"
+        app:layout_constraintTop_toBottomOf="@+id/btDagger" />
 </androidx.constraintlayout.widget.ConstraintLayout>
