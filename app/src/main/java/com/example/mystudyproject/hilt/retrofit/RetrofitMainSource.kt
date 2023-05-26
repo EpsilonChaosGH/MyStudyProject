@@ -1,7 +1,7 @@
-package com.example.mystudyproject.daggerAndHilt.hilt.main
+package com.example.mystudyproject.hilt.retrofit
 
-import com.example.mystudyproject.daggerAndHilt.hilt.main.entity.GetItemRequestEntity
-import com.example.mystudyproject.daggerAndHilt.hilt.main.entity.GetItemResponseEntity
+import com.example.mystudyproject.hilt.retrofit.entity.GetItemRequestEntity
+import com.example.mystudyproject.hilt.retrofit.entity.GetItemResponseEntity
 import com.squareup.moshi.Moshi
 import retrofit2.Retrofit
 import javax.inject.Inject

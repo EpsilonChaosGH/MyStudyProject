@@ -1,4 +1,4 @@
-package com.example.mystudyproject.daggerAndHilt.hilt
+package com.example.mystudyproject.hilt
 
 import dagger.Binds
 import dagger.Module

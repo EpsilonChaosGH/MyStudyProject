@@ -1,4 +1,4 @@
-package com.example.mystudyproject.daggerAndHilt.hilt
+package com.example.mystudyproject.hilt
 
 import com.squareup.moshi.Moshi
 import dagger.Module

@@ -15,23 +15,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btShowViewModel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ViewModel"
-        app:layout_constraintEnd_toEndOf="@+id/btShowDialog"
-        app:layout_constraintStart_toStartOf="@+id/btShowDialog"
-        app:layout_constraintTop_toBottomOf="@+id/btShowDialog" />
 
     <Button
         android:id="@+id/btCustomView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Custom View"
-        app:layout_constraintEnd_toEndOf="@+id/btShowViewModel"
-        app:layout_constraintStart_toStartOf="@+id/btShowViewModel"
-        app:layout_constraintTop_toBottomOf="@+id/btShowViewModel" />
+        app:layout_constraintEnd_toEndOf="@+id/btShowDialog"
+        app:layout_constraintStart_toStartOf="@+id/btShowDialog"
+        app:layout_constraintTop_toBottomOf="@+id/btShowDialog" />
 
     <Button
         android:id="@+id/btTicTacToe"
@@ -78,21 +70,13 @@
         app:layout_constraintStart_toStartOf="@+id/btSavedStateModule"
         app:layout_constraintTop_toBottomOf="@+id/btSavedStateModule" />
 
-    <Button
-        android:id="@+id/btDagger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DAGGER"
-        app:layout_constraintEnd_toEndOf="@+id/btNavigationTabs"
-        app:layout_constraintStart_toStartOf="@+id/btNavigationTabs"
-        app:layout_constraintTop_toBottomOf="@+id/btNavigationTabs" />
 
     <Button
         android:id="@+id/btHilt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HILT"
-        app:layout_constraintEnd_toEndOf="@+id/btDagger"
-        app:layout_constraintStart_toStartOf="@+id/btDagger"
-        app:layout_constraintTop_toBottomOf="@+id/btDagger" />
+        app:layout_constraintEnd_toEndOf="@+id/btNavigationTabs"
+        app:layout_constraintStart_toStartOf="@+id/btNavigationTabs"
+        app:layout_constraintTop_toBottomOf="@+id/btNavigationTabs" />
 </androidx.constraintlayout.widget.ConstraintLayout>

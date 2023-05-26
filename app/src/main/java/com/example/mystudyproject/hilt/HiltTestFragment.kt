@@ -1,4 +1,4 @@
-package com.example.mystudyproject.daggerAndHilt.hilt
+package com.example.mystudyproject.hilt
 
 import android.os.Bundle
 import android.view.View

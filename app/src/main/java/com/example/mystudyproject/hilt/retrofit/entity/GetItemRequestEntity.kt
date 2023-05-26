@@ -1,4 +1,4 @@
-package com.example.mystudyproject.daggerAndHilt.hilt.main.entity
+package com.example.mystudyproject.hilt.retrofit.entity
 
 import com.squareup.moshi.Json
 
