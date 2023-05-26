@@ -1,4 +1,4 @@
-package com.example.mystudyproject.daggerAndHilt.hilt
+package com.example.mystudyproject.hilt
 
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -1,13 +1,12 @@
 package com.example.mystudyproject
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.customViwe.CustomViewFragment
-import com.example.mystudyproject.daggerAndHilt.hilt.HiltTestFragment
+import com.example.mystudyproject.hilt.HiltTestFragment
 import com.example.mystudyproject.databinding.FragmentMenuBinding
 import com.example.mystudyproject.dialog.DialogsFragment
 import com.example.mystudyproject.mvvm.DroidsListFragment
@@ -15,7 +14,6 @@ import com.example.mystudyproject.navigationTabs.ContainerFragment
 import com.example.mystudyproject.recyclerView.RecyclerViewFragment
 import com.example.mystudyproject.savedStateModule.ColorsGeneratorFragment
 import com.example.mystudyproject.ticTacToe.TicTacToeFragment
-import com.example.mystudyproject.viewModel.ViewModelFragment
 
 class MenuFragment : Fragment() {
     private lateinit var binding: FragmentMenuBinding
@@ -26,15 +24,6 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMenuBinding.inflate(inflater, container, false)
-
-        binding.btShowViewModel.setOnClickListener {
-            launchFragment(
-                DialogsFragment.newInstance(
-                    DialogsFragment.Options("title", Color.RED),
-                    ViewModelFragment()
-                )
-            )
-        }
 
         binding.btShowDialog.setOnClickListener { launchFragment(DialogsFragment()) }
 

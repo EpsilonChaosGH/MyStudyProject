@@ -2,11 +2,14 @@ package com.example.mystudyproject.mvvm
 
 import java.util.*
 import java.util.concurrent.Callable
+import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.collections.ArrayList
 
 typealias DroidsListener = (droids: List<Droid>) -> Unit
 
-class DroidService {
+@Singleton
+class DroidService @Inject constructor() {
 
     private val listeners = mutableSetOf<DroidsListener>()
     private var droids = mutableListOf<Droid>()

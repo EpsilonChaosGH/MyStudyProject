@@ -1,7 +1,7 @@
-package com.example.mystudyproject.daggerAndHilt.hilt.main
+package com.example.mystudyproject.hilt.retrofit
 
-import com.example.mystudyproject.daggerAndHilt.hilt.main.entity.GetItemRequestEntity
-import com.example.mystudyproject.daggerAndHilt.hilt.main.entity.GetItemResponseEntity
+import com.example.mystudyproject.hilt.retrofit.entity.GetItemRequestEntity
+import com.example.mystudyproject.hilt.retrofit.entity.GetItemResponseEntity
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST

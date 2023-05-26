@@ -1,4 +1,4 @@
-package com.example.mystudyproject.di
+package com.example.mystudyproject.navigationTabs.di
 
 import com.example.mystudyproject.navigationTabs.Repository
 import com.example.mystudyproject.navigationTabs.RepositoryImpl

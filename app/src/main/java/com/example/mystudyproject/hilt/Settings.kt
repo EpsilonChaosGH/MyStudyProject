@@ -1,4 +1,4 @@
-package com.example.mystudyproject.daggerAndHilt.hilt
+package com.example.mystudyproject.hilt
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext

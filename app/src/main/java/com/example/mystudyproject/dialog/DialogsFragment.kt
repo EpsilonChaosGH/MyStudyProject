@@ -116,6 +116,4 @@ class DialogsFragment : Fragment() {
         val title: String,
         val color: Int
     ) : Parcelable
-
-
 }
