@@ -79,4 +79,13 @@
         app:layout_constraintEnd_toEndOf="@+id/btNavigationTabs"
         app:layout_constraintStart_toStartOf="@+id/btNavigationTabs"
         app:layout_constraintTop_toBottomOf="@+id/btNavigationTabs" />
+
+    <Button
+        android:id="@+id/btTestArchitecture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TEST ARCHITECTURE"
+        app:layout_constraintEnd_toEndOf="@+id/btHilt"
+        app:layout_constraintStart_toStartOf="@+id/btHilt"
+        app:layout_constraintTop_toBottomOf="@+id/btHilt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
