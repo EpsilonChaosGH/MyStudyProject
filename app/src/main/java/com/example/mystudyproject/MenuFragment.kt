@@ -13,6 +13,7 @@ import com.example.mystudyproject.mvvm.DroidsListFragment
 import com.example.mystudyproject.navigationTabs.ContainerFragment
 import com.example.mystudyproject.recyclerView.RecyclerViewFragment
 import com.example.mystudyproject.savedStateModule.ColorsGeneratorFragment
+import com.example.mystudyproject.testArchitecture.FragmentUser
 import com.example.mystudyproject.ticTacToe.TicTacToeFragment
 
 class MenuFragment : Fragment() {
@@ -41,6 +42,8 @@ class MenuFragment : Fragment() {
 
         binding.btHilt.setOnClickListener { launchFragment(HiltTestFragment()) }
 
+        binding.btTestArchitecture.setOnClickListener {launchFragment(FragmentUser())}
+
         return binding.root
     }
 
@@ -52,5 +55,4 @@ class MenuFragment : Fragment() {
             .replace(R.id.fragmentContainerView, fragment)
             .commit()
     }
-
 }
