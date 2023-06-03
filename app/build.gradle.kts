@@ -1,19 +1,23 @@
+typealias and = com.example.internal.Android
+typealias dep = com.example.internal.Dependencies
+
 plugins {
     id("dagger.hilt.android.plugin")
     id("com.android.application")
     id("kotlin-android")
+    id("internal")
 
     kotlin("kapt")
     kotlin("plugin.parcelize")
 }
 
 android {
-    compileSdk = 33
+    compileSdk = and.compileSdk
 
     defaultConfig {
         applicationId = "com.example.mystudyproject"
-        minSdk = 25
-        targetSdk = 33
+        minSdk = and.minSdk
+        targetSdk = and.targetSdk
         versionCode = 1
         versionName = "1.0"
 
@@ -45,44 +49,49 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    packagingOptions {
+        resources {
+            excludes.add("META-INF/AL2.0")
+            excludes.add("META-INF/LGPL2.1")
+        }
+    }
     namespace = "com.example.mystudyproject"
 }
 
 dependencies {
 
-    val retrofit_version = "2.9.0"
-    val hilt_version = "2.44"
-    val room_version = "2.5.1"
-    val glide_version = "4.13.2"
-    val nav_version = "2.5.3"
-    val mockk_version = "1.13.0"
+    dep.retrofit.apply { // https://square.github.io/retrofit/
+        implementation(converterMoshi)
+        implementation(retrofit2)
+    }
 
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.fragment:fragment-ktx:1.5.7")
-    implementation("androidx.activity:activity-ktx:1.7.1")
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    dep.room.apply { // https://developer.android.com/jetpack/androidx/releases/room
+        implementation(runtime)
+        implementation(ktx)
+        kapt(compiler)
+    }
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    dep.hilt.apply { // https://dagger.dev/hilt/
+        implementation(hiltAndroid)
+        kapt(daggerHiltCompiler)
+        kaptAndroidTest(daggerHiltCompiler)
+    }
 
-    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
-    implementation("com.squareup.retrofit2:converter-moshi:$retrofit_version")
+    dep.other.apply {// Miscellaneous required libraries
+        implementation(ktxCore)
+        implementation(ktxActivity)
+        implementation(ktxFragment)
+        implementation(appcompat)
+        implementation(constraintLayout)
+        implementation(material)
+        implementation(navigationFragment)
+        implementation(navigationUi)
+        implementation(glide)
+        implementation(coroutines)
+    }
 
-    implementation("com.google.dagger:hilt-android:$hilt_version")
-    kapt("com.google.dagger:hilt-compiler:$hilt_version")
-
-    testImplementation("io.mockk:mockk-android:$mockk_version")
-
-    implementation("com.github.bumptech.glide:glide:$glide_version")
-
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-
-    implementation("androidx.room:room-runtime:$room_version")
-    kapt("androidx.room:room-compiler:$room_version")
-    implementation("androidx.room:room-ktx:$room_version")
+    dep.test.apply { // Unit tests
+        testImplementation(junit)
+        testImplementation(mockk)
+    }
 }
