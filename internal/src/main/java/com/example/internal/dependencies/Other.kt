@@ -7,6 +7,11 @@ import com.example.internal.Versions
 object Other {
 
     /**
+     * [Yandex maps](https://yandex.ru/dev/mapkit/doc/ru/android/quickstart)
+     */
+    const val yandexMaps = "com.yandex.android:maps.mobile:${Versions.yandexMaps}"
+
+    /**
      * [Core Kotlin Extensions](https://developer.android.com/kotlin/ktx#core)
      * Kotlin extensions for 'core' artifact
      */

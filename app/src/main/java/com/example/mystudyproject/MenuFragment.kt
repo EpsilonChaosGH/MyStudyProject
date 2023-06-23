@@ -15,6 +15,7 @@ import com.example.mystudyproject.recyclerView.RecyclerViewFragment
 import com.example.mystudyproject.savedStateModule.ColorsGeneratorFragment
 import com.example.mystudyproject.testArchitecture.FragmentUser
 import com.example.mystudyproject.ticTacToe.TicTacToeFragment
+import com.example.mystudyproject.yandexmap.MapFragment
 
 class MenuFragment : Fragment() {
     private lateinit var binding: FragmentMenuBinding
@@ -43,6 +44,10 @@ class MenuFragment : Fragment() {
         binding.btHilt.setOnClickListener { launchFragment(HiltTestFragment()) }
 
         binding.btTestArchitecture.setOnClickListener {launchFragment(FragmentUser())}
+
+        binding.btYandexMap.setOnClickListener { launchFragment(MapFragment()) }
+
+
 
         return binding.root
     }

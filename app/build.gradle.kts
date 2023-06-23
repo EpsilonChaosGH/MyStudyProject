@@ -39,17 +39,21 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        viewBinding = true
+
+    viewBinding {
+        enable = true
     }
-    packagingOptions {
+
+    packaging {
         resources {
             excludes.add("META-INF/AL2.0")
             excludes.add("META-INF/LGPL2.1")
@@ -78,6 +82,7 @@ dependencies {
     }
 
     dep.other.apply {// Miscellaneous required libraries
+        implementation(yandexMaps)
         implementation(ktxCore)
         implementation(ktxActivity)
         implementation(ktxFragment)
