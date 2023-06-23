@@ -8,6 +8,7 @@ import com.example.mystudyproject.databinding.ActivityMainBinding
 import com.example.mystudyproject.mvvm.Droid
 import com.example.mystudyproject.mvvm.DroidDetailsFragment
 import com.example.mystudyproject.mvvm.Navigator
+import com.yandex.mapkit.MapKitFactory
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity(), Navigator {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        MapKitFactory.setApiKey("3fc96586-0ce8-41ca-8d3a-2ac3155d4fee")
 
         if (savedInstanceState == null) {
             val fragment = Fragment()

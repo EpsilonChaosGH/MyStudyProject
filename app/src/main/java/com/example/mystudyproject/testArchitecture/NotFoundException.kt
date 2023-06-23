@@ -15,5 +15,4 @@
  */
 
 package com.example.mystudyproject.testArchitecture
-
 class NotFoundException : RuntimeException("Data not found")

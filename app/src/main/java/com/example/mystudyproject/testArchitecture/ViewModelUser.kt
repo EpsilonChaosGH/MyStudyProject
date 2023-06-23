@@ -18,7 +18,6 @@ class ViewModelUser @Inject constructor(
     private val preferences: AppPreferences,
 ) : ViewModel() {
 
-
     init {
         repeatLoadingUser()
     }
@@ -30,6 +29,9 @@ class ViewModelUser @Inject constructor(
     val loadingUserPref = _loadingUserPref.asStateFlow()
 
     fun repeatLoadingUser() {
+        executeWithResponse {
+            repositoryUser.loadingUser()
+        }
         repositoryUser.loadingUser()
             .onEach {
                 it.success { preferences.modelUser = it }

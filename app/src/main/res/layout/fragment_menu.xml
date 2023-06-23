@@ -88,4 +88,13 @@
         app:layout_constraintEnd_toEndOf="@+id/btHilt"
         app:layout_constraintStart_toStartOf="@+id/btHilt"
         app:layout_constraintTop_toBottomOf="@+id/btHilt" />
+
+    <Button
+        android:id="@+id/btYandexMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yandex map"
+        app:layout_constraintEnd_toEndOf="@+id/btTestArchitecture"
+        app:layout_constraintStart_toStartOf="@+id/btTestArchitecture"
+        app:layout_constraintTop_toBottomOf="@+id/btTestArchitecture" />
 </androidx.constraintlayout.widget.ConstraintLayout>
