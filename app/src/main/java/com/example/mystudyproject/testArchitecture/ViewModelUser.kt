@@ -28,7 +28,7 @@ class ViewModelUser @Inject constructor(
     private val _loadingUserPref: MutableStateFlow<ModelUser?> = MutableStateFlow(null)
     val loadingUserPref = _loadingUserPref.asStateFlow()
 
-    fun repeatLoadingUser() {
+    private fun repeatLoadingUser() {
         executeWithResponse {
             repositoryUser.loadingUser()
         }
