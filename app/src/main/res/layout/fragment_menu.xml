@@ -97,4 +97,5 @@
         app:layout_constraintEnd_toEndOf="@+id/btTestArchitecture"
         app:layout_constraintStart_toStartOf="@+id/btTestArchitecture"
         app:layout_constraintTop_toBottomOf="@+id/btTestArchitecture" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

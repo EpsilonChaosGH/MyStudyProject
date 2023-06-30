@@ -5,25 +5,38 @@ import java.util.*
 fun main() {
     val numbers = listOf(12, 11, 12, -32, 0, -2, 6, 23)
 
-    var isSorted = false
+    selectionSort(numbers)
 
-    while (!isSorted) {
-        isSorted = true
-        for (i in 1 until numbers.size) {
-            if (numbers[i] < numbers[i - 1]) {
-                Collections.swap(numbers, i, i - 1)
-                isSorted = false
-            }
-        }
-    }
+    //var isSorted = false
 
-    for (i in numbers.indices) {
+//    while (!isSorted) {
+//        isSorted = true
+//        for (i in 1 until numbers.size) {
+//            if (numbers[i] < numbers[i - 1]) {
+//                Collections.swap(numbers, i, i - 1)
+//                isSorted = false
+//            }
+//        }
+//    }
+//
+//    for (i in numbers.indices) {
+//        var minIndex = i
+//        for (x in i + 1 until numbers.size) if (numbers[minIndex] > numbers[x]) minIndex = x
+//        if (numbers[minIndex] != numbers[i]) {
+//            Collections.swap(numbers, minIndex, i)
+//        }
+//    }
+//
+//    println(numbers)
+}
+
+fun selectionSort(list: List<Int>) {
+    for (i in list.indices) {
         var minIndex = i
-        for (x in i + 1 until numbers.size) if (numbers[minIndex] > numbers[x]) minIndex = x
-        if (numbers[minIndex] != numbers[i]) {
-            Collections.swap(numbers, minIndex, i)
+        for (x in i + 1 until list.size) if (list[minIndex] > list[x]) minIndex = x
+        if (list[minIndex] != list[i]) {
+            Collections.swap(list, minIndex, i)
         }
     }
-
-    println(numbers)
+    println("Selection Sort: $list")
 }
