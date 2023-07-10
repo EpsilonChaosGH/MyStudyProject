@@ -1,43 +1,53 @@
 package com.example.mystudyproject.algorithms
 
-import java.util.*
+import java.util.Collections
 
 fun main() {
 
-    val numbers = listOf(12, 11, 12, -32, 0, -2, 6, 23)
+    val list = listOf(11, 6, 3, -2, 0, 22, 54, -7)
 
-    selectionSort(numbers)
-    bubbleSort(numbers)
-    println(quickSort(numbers))
+    println(bubbleSort1(list))
+    println(selectionSort1(list))
+    println(quickSort1(list))
+
+    println(fibonacci(5))
+
 }
 
-fun bubbleSort(list: List<Int>) {
+fun fibonacci(item: Int): Int {
+    if (item <= 1) return 1
+    return item * fibonacci(item - 1)
+}
+
+fun bubbleSort1(list: List<Int>): List<Int> {
     var isSorted = false
+
     while (!isSorted) {
         isSorted = true
         for (i in 1 until list.size) {
-            if (list[i] < list[i - 1]) {
+            if (list[i - 1] > list[i]) {
                 Collections.swap(list, i, i - 1)
                 isSorted = false
             }
         }
     }
-    println(list)
+    return list
 }
 
-fun selectionSort(list: List<Int>) {
+fun selectionSort1(list: List<Int>): List<Int> {
     for (i in list.indices) {
         var minIndex = i
         for (x in i + 1 until list.size) {
             if (list[minIndex] > list[x]) minIndex = x
         }
-        Collections.swap(list, i, minIndex)
+        Collections.swap(list, minIndex, i)
     }
-    println(list)
+    return list
 }
 
-fun quickSort(list: List<Int>): List<Int> {
+fun quickSort1(list: List<Int>): List<Int> {
     if (list.size <= 1) return list
+
     val pivotIndex = list.size / 2
     val pivot = list[pivotIndex]
     val less = mutableListOf<Int>()
@@ -48,5 +58,6 @@ fun quickSort(list: List<Int>): List<Int> {
         if (list[i] < pivot) less.add(list[i])
         else greater.add(list[i])
     }
-    return quickSort(less) + pivot + quickSort(greater)
+
+    return quickSort1(less) + pivot + quickSort1(greater)
 }
