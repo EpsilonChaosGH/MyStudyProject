@@ -4,48 +4,28 @@ import java.util.Collections
 
 fun main() {
 
-    val list = listOf(1, 2, 3, 4, 5, 6, 7, 8)
+    val list = listOf(11, 6, 3, -2, 0, 22, 54, -7)
 
-    println(linearSearch11(list, 7))
-    println(binarySearch11(list, 7))
-    println(recursiveBinarySearch11(list, 8, 0, list.size - 1))
+    println(bubbleSort1(list))
+    println(selectionSort1(list))
+    println(quickSort1(list))
 
-    val list2 = listOf(11, 2, 6, -2, 0, 5, -23)
+    println(fibonacci(5))
 
-    println(bubbleSearch11(list2))
-    println(selectionSort11(list2))
 }
 
-fun linearSearch11(list: List<Int>, item: Int): Int {
-    for (i in list.indices) {
-        if (list[i] == item) return i
-    }
-    return -1
+fun fibonacci(item: Int): Int {
+    if (item <= 1) return 1
+    return item * fibonacci(item - 1)
 }
 
-fun binarySearch11(list: List<Int>, item: Int): Int {
-    var start = 0
-    var end = list.size - 1
-    var middle: Int
-
-    while (start <= end) {
-        middle = (start + end) / 2
-        if (list[middle] == item) return middle
-        if (list[middle] > item) {
-            end = middle - 1
-        } else {
-            start = middle + 1
-        }
-    }
-    return -1
-}
-
-fun bubbleSearch11(list: List<Int>): List<Int> {
+fun bubbleSort1(list: List<Int>): List<Int> {
     var isSorted = false
+
     while (!isSorted) {
         isSorted = true
         for (i in 1 until list.size) {
-            if (list[i] < list[i - 1]) {
+            if (list[i - 1] > list[i]) {
                 Collections.swap(list, i, i - 1)
                 isSorted = false
             }
@@ -54,23 +34,30 @@ fun bubbleSearch11(list: List<Int>): List<Int> {
     return list
 }
 
-fun recursiveBinarySearch11(list: List<Int>, item: Int, start: Int, end: Int): Int {
-    val middle = (start + end) / 2
-
-    if (list[middle] == item) return middle
-    if (start == end) return -1
-
-    return if (list[middle] > item) recursiveBinarySearch(list, item, start, middle - 1)
-    else recursiveBinarySearch(list, item, middle + 1, end)
-}
-
-fun selectionSort11(list: List<Int>): List<Int> {
+fun selectionSort1(list: List<Int>): List<Int> {
     for (i in list.indices) {
         var minIndex = i
         for (x in i + 1 until list.size) {
-            if (list[x] < list[minIndex]) minIndex = x
+            if (list[minIndex] > list[x]) minIndex = x
         }
         Collections.swap(list, minIndex, i)
     }
     return list
+}
+
+fun quickSort1(list: List<Int>): List<Int> {
+    if (list.size <= 1) return list
+
+    val pivotIndex = list.size / 2
+    val pivot = list[pivotIndex]
+    val less = mutableListOf<Int>()
+    val greater = mutableListOf<Int>()
+
+    for (i in list.indices) {
+        if (i == pivotIndex) continue
+        if (list[i] < pivot) less.add(list[i])
+        else greater.add(list[i])
+    }
+
+    return quickSort1(less) + pivot + quickSort1(greater)
 }

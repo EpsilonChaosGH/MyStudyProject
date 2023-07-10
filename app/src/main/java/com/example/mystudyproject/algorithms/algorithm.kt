@@ -11,17 +11,6 @@ fun main() {
     println(quickSort(numbers))
 }
 
-fun selectionSort(list: List<Int>) {
-    for (i in list.indices) {
-        var minIndex = i
-        for (x in i + 1 until list.size) {
-            if (list[minIndex] > list[x]) minIndex = x
-        }
-        Collections.swap(list, i, minIndex)
-    }
-    println(list)
-}
-
 fun bubbleSort(list: List<Int>) {
     var isSorted = false
     while (!isSorted) {
@@ -32,6 +21,17 @@ fun bubbleSort(list: List<Int>) {
                 isSorted = false
             }
         }
+    }
+    println(list)
+}
+
+fun selectionSort(list: List<Int>) {
+    for (i in list.indices) {
+        var minIndex = i
+        for (x in i + 1 until list.size) {
+            if (list[minIndex] > list[x]) minIndex = x
+        }
+        Collections.swap(list, i, minIndex)
     }
     println(list)
 }
