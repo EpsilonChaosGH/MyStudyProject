@@ -97,5 +97,13 @@
         app:layout_constraintEnd_toEndOf="@+id/btTestArchitecture"
         app:layout_constraintStart_toStartOf="@+id/btTestArchitecture"
         app:layout_constraintTop_toBottomOf="@+id/btTestArchitecture" />
+    <Button
+        android:id="@+id/btBroadcast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BROADCAST"
+        app:layout_constraintEnd_toEndOf="@+id/btTestArchitecture"
+        app:layout_constraintStart_toStartOf="@+id/btTestArchitecture"
+        app:layout_constraintTop_toBottomOf="@+id/btTestArchitecture" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
