@@ -29,7 +29,7 @@ class BroadcastReceiverFragment : Fragment(R.layout.fragment_broadcast_receiver)
             level * 100 / scale.toFloat()
         }
         binding.value.text = batteryPct?.toInt().toString()
-        sendMessage()
+       // sendMessage()
 
 //        Toast.makeText(this, chargePlug, Toast.LENGTH_SHORT).show()
 
