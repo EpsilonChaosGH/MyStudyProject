@@ -9,7 +9,7 @@ fun main() {
 
     val size = 1000
 
-    for(i in 1..100){
+    for (i in 1..100) {
         val list = (0..size).toMutableList()
 
         val result = binarySearchTest(list, Random.nextInt(size))

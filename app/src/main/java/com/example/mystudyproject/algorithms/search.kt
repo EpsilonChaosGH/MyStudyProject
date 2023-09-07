@@ -1,7 +1,6 @@
 package com.example.mystudyproject.algorithms
 
 fun main() {
-
     val list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
     val bigList = (1..100_000_000).toList()
@@ -12,7 +11,6 @@ fun main() {
     println(linearSearch(list, 3))
     println(binarySearch(list, 3))
     println(recursiveBinarySearch(list, 3, 0, list.size - 1))
-
 }
 
 fun linearSearch(list: List<Int>, item: Int): Int {

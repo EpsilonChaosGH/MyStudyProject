@@ -9,7 +9,6 @@ fun main() {
     println(bubbleSort1(list))
     println(selectionSort1(list))
     println(quickSort1(list))
-
     println(fibonacci(5))
 
 }
