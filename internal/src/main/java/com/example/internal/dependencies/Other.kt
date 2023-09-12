@@ -7,6 +7,11 @@ import com.example.internal.Versions
 object Other {
 
     /**
+     * [WorkManager](https://developer.android.com/jetpack/androidx/releases/work)
+     */
+    const val workManager = "androidx.work:work-runtime-ktx:${Versions.work_version}"
+
+    /**
      * [Yandex maps](https://yandex.ru/dev/mapkit/doc/ru/android/quickstart)
      */
     const val yandexMaps = "com.yandex.android:maps.mobile:${Versions.yandexMaps}"

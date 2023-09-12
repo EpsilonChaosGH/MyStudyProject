@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -24,6 +26,14 @@
 <!--                <action android:name="ru.alexanderklimov.action.CAT" />-->
 <!--            </intent-filter>-->
 <!--        </receiver>-->
+
+        <service
+            android:exported="false"
+            android:name=".appcomponents.services.MyBackgroundService"/>
+
+        <service
+            android:exported="false"
+            android:name=".appcomponents.services.MyForegroundService"/>
 
         <activity
             android:name=".MainActivity"
