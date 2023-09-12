@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.mystudyproject.appcomponents.BroadcastReceiverFragment
+import com.example.mystudyproject.appcomponents.services.ServicesFragment
 import com.example.mystudyproject.customViwe.CustomViewFragment
 import com.example.mystudyproject.hilt.HiltTestFragment
 import com.example.mystudyproject.databinding.FragmentMenuBinding
@@ -49,6 +50,8 @@ class MenuFragment : Fragment() {
         binding.btYandexMap.setOnClickListener { launchFragment(MapFragment()) }
 
         binding.btBroadcast.setOnClickListener { launchFragment(BroadcastReceiverFragment()) }
+
+        binding.btServices.setOnClickListener { launchFragment(ServicesFragment()) }
 
 
 

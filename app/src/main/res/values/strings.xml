@@ -8,4 +8,9 @@
     <string name="cant_load_droid_details">Can\'t load droid details</string>
     <string name="cant_delete_droid">Can\'t delete the droid</string>
     <string name="cant_move_droid">Can\'t move droid</string>
+    <string name="permission_grated">permission grated</string>
+    <string name="permissions_denied">permissions denied</string>
+    <string name="permissions_denied_forever">permissions denied forever</string>
+    <string name="button_open_settings">button open settings</string>
+    <string name="button_cancel">button cancel</string>
 </resources>

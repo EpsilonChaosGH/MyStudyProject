@@ -82,6 +82,7 @@ dependencies {
     }
 
     dep.other.apply {// Miscellaneous required libraries
+        implementation(workManager)
         implementation(yandexMaps)
         implementation(ktxCore)
         implementation(ktxActivity)

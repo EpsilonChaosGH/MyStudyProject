@@ -19,6 +19,7 @@ object Versions {
     const val interceptor = "4.9.1"
 
     // other
+    const val work_version = "2.8.1"
     const val yandexMaps = "4.3.1-lite"
     const val ktxCore = "1.10.1"
     const val ktxActivity = "1.7.2"

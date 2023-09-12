@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity(), Navigator {
                 .add(R.id.fragmentContainerView, fragment)
                 .commit()
         }
+
+       // val service = MyService()
+
+       // service.startService(Intent())
     }
 
     override fun showDetails(droid: Droid) {
