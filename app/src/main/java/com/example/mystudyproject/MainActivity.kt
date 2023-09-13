@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity(), Navigator {
                 .add(R.id.fragmentContainerView, fragment)
                 .commit()
         }
+        runOnUiThread{
 
+        }
        // val service = MyService()
 
        // service.startService(Intent())

@@ -8,7 +8,7 @@ import kotlin.concurrent.thread
 class MyBackgroundService : Service() {
 
     override fun onCreate() {
-        println("onCreate")
+        println("BACKGROUND onCreate ")
         super.onCreate()
     }
 
@@ -17,7 +17,7 @@ class MyBackgroundService : Service() {
         thread {
             repeat(30) {
                 Thread.sleep(1000)
-                println("SERVICE")
+                println("BACKGROUND")
             }
         }
         stopSelf()
