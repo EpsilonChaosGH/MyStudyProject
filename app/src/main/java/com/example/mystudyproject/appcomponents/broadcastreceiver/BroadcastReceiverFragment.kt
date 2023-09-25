@@ -1,4 +1,4 @@
-package com.example.mystudyproject.appcomponents
+package com.example.mystudyproject.appcomponents.broadcastreceiver
 
 import android.content.Intent
 import android.content.IntentFilter

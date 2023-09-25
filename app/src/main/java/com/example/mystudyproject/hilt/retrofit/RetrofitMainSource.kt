@@ -5,11 +5,12 @@ import com.example.mystudyproject.hilt.retrofit.entity.GetItemResponseEntity
 import com.squareup.moshi.Moshi
 import retrofit2.Retrofit
 import javax.inject.Inject
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Singleton
 class RetrofitMainSource @Inject constructor(
-    private val retrofit: Retrofit,
+    @Named("Tarkov") private val retrofit: Retrofit,
     val moshi: Moshi
 ) : MainSource {
 

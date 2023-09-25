@@ -1,4 +1,4 @@
-package com.example.mystudyproject.appcomponents
+package com.example.mystudyproject.player
 
 import android.os.Bundle
 import android.view.View

@@ -1,6 +1,7 @@
-package com.example.mystudyproject.testArchitecture.di
+package com.example.mystudyproject.testlogger.di
 
-import com.example.mystudyproject.testArchitecture.user.ServiceUser
+
+import com.example.mystudyproject.testlogger.CurrentWeatherService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +17,7 @@ object ServicesModule {
 
     @Provides
     @Singleton
-    fun providesServiceUser(@Named("Tarkov") retrofit: Retrofit): ServiceUser {
-        return retrofit.create(ServiceUser::class.java)
+    fun providesServiceWeather(@Named("Weather")retrofit: Retrofit): CurrentWeatherService {
+        return retrofit.create(CurrentWeatherService::class.java)
     }
 }
